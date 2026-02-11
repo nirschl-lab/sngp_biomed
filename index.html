@@ -241,21 +241,18 @@
         <div class="columns is-centered">
           <div class="column has-text-centered">
             <!-- TODO: Replace with your paper title -->
-            <h1 class="title is-1 publication-title">Academic Project Page</h1>
+            <h1 class="title is-1 publication-title">Uncertainty-Aware Image Classification in Biomedical Imaging Using SNGP</h1>
             <div class="is-size-5 publication-authors">
               <!-- TODO: Replace with your paper authors and their personal links -->
               <span class="author-block">
-                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">First Author</a><sup>*</sup>,</span>
+                <a href="https://scholar.google.com/citations?user=HkbrdmcAAAAJ&hl=en" target="_blank">Uma Meleti</a><sup>*</sup>,</span>
                 <span class="author-block">
-                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Second Author</a><sup>*</sup>,</span>
-                  <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Third Author</a>
-                  </span>
+                  <a href="https://scholar.google.com/citations?user=AJJwTxoAAAAJ&hl=en" target="_blank">Jeffrey J. Nirschl</a><sup>*</sup>,</span>
                   </div>
 
                   <div class="is-size-5 publication-authors">
                     <!-- TODO: Replace with your institution and conference/journal info -->
-                    <span class="author-block">Institution Name<br>Conference name and year</span>
+                    <span class="author-block">University Of Wisconsin Madison<br>International Symposium on Biomedical Imaging 2026</span>
                     <!-- TODO: Remove this line if no equal contribution -->
                     <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
                   </div>
@@ -286,7 +283,7 @@
 
                   <!-- TODO: Replace with your GitHub repository URL -->
                   <span class="link-block">
-                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
+                    <a href="https://github.com/nirschl-lab/sngp_core" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
@@ -314,23 +311,35 @@
 </section>
 
 
-<!-- Teaser video-->
+<!-- Teaser image-->
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <!-- TODO: Replace with your teaser video -->
-      <video poster="" id="tree" autoplay controls muted loop height="100%" preload="metadata">
-        <!-- TODO: Add your video file path here -->
-        <source src="static/videos/banner_video.mp4" type="video/mp4">
-      </video>
-      <!-- TODO: Replace with your video description -->
-      <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
+      <!-- Overview image showing comparison between DNN and SNGP -->
+      <img src="static/images/sngp_overview_website.png" alt="Overview of SNGP vs DNN predictions" loading="lazy" style="width: 100%; height: auto; max-width: 100%;" />
+      <!-- Description of the overview image -->
+      <h2 class="subtitle has-text-justified">
+        Overview of the predictions of deterministic DNN vs SNGP on In-Distribution (blood cell) vs Out-of-Distribution (cardiac) data. The Spectral-Normalized Neural Gaussian Process (SNGP) provides robust uncertainty estimates, enabling reliable detection of distribution shift and improved model trustworthiness in clinical settings.
       </h2>
     </div>
   </div>
 </section>
-<!-- End teaser video -->
+<!-- End teaser image -->
+
+<!-- OOD Risk in Medical Imaging -->
+<section class="hero">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <!-- Risk Impact vs Domain Sensitivity visualization -->
+      <img src="static/images/risk.png" alt="Risk Impact vs Domain Sensitivity in Medical Imaging" loading="lazy" style="width: 60%; height: auto; margin: 0 auto; display: block;" />
+      <!-- Description of OOD risk -->
+      <h2 class="subtitle has-text-justified">
+        The critical importance of Out-of-Distribution detection in medical imaging. Medical AI systems occupy the high-risk region where both domain sensitivity and impact on patient outcomes are significant. A model trained to classify cats vs. dogs can afford mistakes, but a cancer prediction system must reliably detect when input data deviates from its training distribution. Without robust OOD detection, models risk making confidently incorrect predictions on unfamiliar data, potentially leading to misdiagnosis and patient harm.
+      </h2>
+    </div>
+  </div>
+</section>
+<!-- End OOD risk section -->
 
 <!-- Paper abstract -->
 <section class="section hero is-light">
@@ -341,8 +350,21 @@
         <div class="content has-text-justified">
           <!-- TODO: Replace with your paper abstract -->
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
-          </p>
+            Accurate histopathologic interpretation is key for clinical
+            decision-making; however, current deep learning models for
+            digital pathology are often overconfident and poorly calibrated in out-of-distribution (OOD) settings, which limit
+            trust and clinical adoption. Safety-critical medical imaging
+            workflows benefit from intrinsic uncertainty-aware properties
+            that can accurately reject OOD input. We implement the
+            Spectral-normalized Neural Gaussian Process (SNGP), a set
+            of lightweight modifications that apply spectral normalization
+            and replace the final dense layer with a Gaussian process layer
+            to improve single-model uncertainty estimation and OOD detection. We evaluate SNGP vs. deterministic and Monte
+            Carlo dropout on six datasets across three biomedical classification tasks: white blood cells, amyloid plaques, and colorectal histopathology. SNGP has comparable in-distribution
+            performance while significantly improving uncertainty estimation and OOD detection. Thus, SNGP or related models
+            offer a useful framework for uncertainty-aware classification
+            in digital pathology, supporting safe deployment and building
+            trust with pathologists.          </p>
         </div>
       </div>
     </div>
@@ -357,34 +379,39 @@
     <div class="container">
       <div id="results-carousel" class="carousel results-carousel">
        <div class="item">
-        <!-- TODO: Replace with your research result images -->
-        <img src="static/images/carousel1.jpg" alt="First research result visualization" loading="lazy"/>
-        <!-- TODO: Replace with description of this result -->
+        <img src="static/images/entropy/entropyx.png" alt="Entropy distribution visualization" loading="lazy"/>
         <h2 class="subtitle has-text-centered">
-          First image description.
+          Class-logit entropy distributions reveal the uncertainty awareness of different models. Deterministic DNNs and MC Dropout assign low entropy to OOD samples, leading to overconfident predictions. SNGP, in contrast, assigns significantly higher entropy to OOD inputs, demonstrating superior uncertainty quantification and clear separation between in-distribution and out-of-distribution data.
         </h2>
       </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="Second research result visualization" loading="lazy"/>
+      
+       <div class="item">
+        <img src="static/images/ROC/roc_curves_acevedo.png" alt="ROC" loading="lazy"/>
         <h2 class="subtitle has-text-centered">
-          Second image description.
-        </h2>
+          ROC curves demonstrating OOD detection performance of Baseline, MC Dropout, and SNGP methods. SNGP achieves the highest AUC scores across all OOD datasets, showing superior uncertainty quantification and more reliable out-of-distribution detection compared to deterministic and MC Dropout baselines.        </h2>
       </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="Third research result visualization" loading="lazy"/>
+      
+      <!-- <div class="item">
+        Entropy distribution comparison for Acevedo baseline 
+        <img src="static/images/entropy/acevedo_baseline_entropy.png" alt="Deterministic DNN entropy distribution" loading="lazy" style="max-width: 85%; height: auto; margin: 0 auto; display: block;"/>
         <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
-     </div>
-     <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="Fourth research result visualization" loading="lazy"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
-      </h2>
-    </div>
+          Entropy distribution of Acevedo baseline model on in-distribution (Acevedo) and out-of-distribution (all other datasets)
+        </h2>
+      </div> -->
+      <!-- <div class="item">
+        Entropy distribution comparison for Acevedo baseline
+        <img src="static/images/entropy/acevedo_mc_entropy.png" alt="Monte-carlo method entropy distribution" loading="lazy" style="max-width: 85%; height: auto; margin: 0 auto; display: block;"/>
+        <h2 class="subtitle has-text-centered">
+          Entropy distribution of Acevedo baseline model with Monte Carlo dropout on in-distribution (Acevedo) and out-of-distribution (all other datasets)
+        </h2>
+      </div> -->
+     <!-- <div class="item">
+        Entropy distribution comparison for Acevedo baseline
+        <img src="static/images/entropy/acevedo_sngp_entropy.png" alt="SNGP entropy distribution" loading="lazy" style="max-width: 85%; height: auto; margin: 0 auto; display: block;"/>
+        <h2 class="subtitle has-text-centered">
+          Entropy distribution of Acevedo baseline model with SNGP on in-distribution (Acevedo) and out-of-distribution (all other datasets)
+        </h2>
+      </div> -->
   </div>
 </div>
 </div>
@@ -392,60 +419,113 @@
 <!-- End image carousel -->
 
 
+<!-- Dataset Description with FID Scores -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3">Datasets</h2>
+      <div id="results-carousel-datasets" class="carousel results-carousel">
+        <div class="item">
+          <img src="static/images/Dataset/fid_scores.png" alt="Dataset FID Scores" loading="lazy" style="width: 80%; height: auto; margin: 0 auto 20px auto; display: block;"/>
+          <h2 class="subtitle has-text-centered">
+            <b>Fréchet Inception Distance (FID)</b> quantifies dataset similarity: lower values indicate greater semantic similarity, while higher values represent substantial domain shifts, ideal for evaluating OOD detection. We evaluate SNGP across three biomedical imaging tasks using six publicly available datasets: White blood cells (Acevedo 2020, Jung 2022), amyloid plaques (Tang 2019, Wong 2022), and colorectal histopathology (Kather 2016, 2018).
+          </h2>
+        </div>
+
+        <div class="item">
+          <img src="static/images/Dataset/acevedo.png" alt="Acevedo" loading="lazy" style="width: 80%; height: auto; margin: 0 auto 20px auto; display: block;"/>
+          <h2 class="subtitle has-text-centered">
+            Representative sample images from the Acevedo dataset showing white blood cell morphology variations used for in-distribution model training and evaluation.
+          </h2>
+        </div>
+
+        <div class="item">
+          <img src="static/images/Dataset/jung.png" alt="Jung" loading="lazy" style="width: 80%; height: auto; margin: 0 auto 20px auto; display: block;"/>
+          <h2 class="subtitle has-text-centered">
+            Representative sample images from the Jung dataset showing white blood cell variations and morphological features.
+          </h2>
+        </div>
+
+        <div class="item">
+          <img src="static/images/Dataset/kather2016.png" alt="Kather 2016" loading="lazy" style="width: 80%; height: auto; margin: 0 auto 20px auto; display: block;"/>
+          <h2 class="subtitle has-text-centered">
+            Representative sample images from the Kather 2016 dataset showing colorectal histopathology tissue patterns and classifications.
+          </h2>
+        </div>
+
+        <div class="item">
+          <img src="static/images/Dataset/kather2018.png" alt="Kather 2018" loading="lazy" style="width: 80%; height: auto; margin: 0 auto 20px auto; display: block;"/>
+          <h2 class="subtitle has-text-centered">
+            Representative sample images from the Kather 2018 dataset showing colorectal histopathology tissue types and structures.
+          </h2>
+        </div>
+
+        <div class="item">
+          <img src="static/images/Dataset/tang.png" alt="Tang" loading="lazy" style="width: 80%; height: auto; margin: 0 auto 20px auto; display: block;"/>
+          <h2 class="subtitle has-text-centered">
+            Representative sample images from the Tang dataset showing amyloid plaque morphology and tissue characteristics.
+          </h2>
+        </div>
+
+        <div class="item">
+          <img src="static/images/Dataset/wong.png" alt="Wong" loading="lazy" style="width: 80%; height: auto; margin: 0 auto 20px auto; display: block;"/>
+          <h2 class="subtitle has-text-centered">
+            Representative sample images from the Wong dataset showing amyloid plaque variations and pathological features.
+          </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End dataset description -->
 
 
 <!-- Youtube video -->
-<section class="hero is-small is-light">
+<!-- <section class="hero is-small is-light">
   <div class="hero-body">
     <div class="container">
-      <!-- Paper video. -->
+      Paper video.
       <h2 class="title is-3">Video Presentation</h2>
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
           
           <div class="publication-video">
-            <!-- TODO: Replace with your YouTube video ID -->
+            TODO: Replace with your YouTube video ID
             <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
           </div>
         </div>
       </div>
     </div>
   </div>
-</section>
+</section> -->
 <!-- End youtube video -->
 
 
 <!-- Video carousel -->
-<section class="hero is-small">
+<!-- <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
       <h2 class="title is-3">Another Carousel</h2>
-      <div id="results-carousel" class="carousel results-carousel">
+      <div id="results-carousel-video" class="carousel results-carousel">
         <div class="item item-video1">
-          <!-- TODO: Add poster image for better preview -->
           <video poster="" id="video1" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
             <source src="static/videos/carousel1.mp4" type="video/mp4">
           </video>
         </div>
         <div class="item item-video2">
-          <!-- TODO: Add poster image for better preview -->
           <video poster="" id="video2" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
             <source src="static/videos/carousel2.mp4" type="video/mp4">
           </video>
         </div>
         <div class="item item-video3">
-          <!-- TODO: Add poster image for better preview -->
           <video poster="" id="video3" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
             <source src="static/videos/carousel3.mp4" type="video/mp4">
           </video>
         </div>
       </div>
     </div>
   </div>
-</section>
+</section> -->
 <!-- End video carousel -->
 
 
@@ -454,18 +534,17 @@
 
 
 <!-- Paper poster -->
-<section class="hero is-small is-light">
+<!-- <section class="hero is-small is-light">
   <div class="hero-body">
     <div class="container">
       <h2 class="title">Poster</h2>
 
-      <!-- TODO: Replace with your poster PDF -->
       <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
           </iframe>
         
       </div>
     </div>
-  </section>
+  </section> -->
 <!--End paper poster -->
 
 
