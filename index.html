@@ -87,14 +87,14 @@
   <!-- Non-critical CSS - Load asynchronously -->
   <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <link rel="preload" href="static/css/bulma-slider.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   
   <!-- Fallback for browsers that don't support preload -->
   <noscript>
     <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
     <link rel="stylesheet" href="static/css/bulma-slider.min.css">
-    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   </noscript>
   
@@ -104,7 +104,7 @@
   <!-- Defer non-critical JavaScript -->
   <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
-  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
   <script defer src="static/js/bulma-carousel.min.js"></script>
   <script defer src="static/js/bulma-slider.min.js"></script>
   <script defer src="static/js/index.js"></script>
@@ -424,51 +424,52 @@
   <div class="hero-body">
     <div class="container">
       <h2 class="title is-3">Datasets</h2>
+
       <div id="results-carousel-datasets" class="carousel results-carousel">
         <div class="item">
-          <img src="static/images/Dataset/fid_scores.png" alt="Dataset FID Scores" loading="lazy" style="width: 80%; height: auto; margin: 0 auto 20px auto; display: block;"/>
-          <h2 class="subtitle has-text-centered">
-            <b>Fréchet Inception Distance (FID)</b> quantifies dataset similarity: lower values indicate greater semantic similarity, while higher values represent substantial domain shifts, ideal for evaluating OOD detection. We evaluate SNGP across three biomedical imaging tasks using six publicly available datasets: White blood cells (Acevedo 2020, Jung 2022), amyloid plaques (Tang 2019, Wong 2022), and colorectal histopathology (Kather 2016, 2018).
-          </h2>
-        </div>
-
+            <img src="static/images/Dataset/fid_heatmap.png" alt="Dataset FID Scores" loading="lazy" style="width: 50%; height: auto; margin: 0 auto 20px auto; display: block;"/>
+            <h2 class="subtitle has-text-centered">
+              <b>Fréchet Inception Distance (FID)</b> quantifies dataset similarity: lower values indicate greater semantic similarity, while higher values represent substantial domain shifts, ideal for evaluating OOD detection. We evaluate SNGP across three biomedical imaging tasks using six publicly available datasets: White blood cells (Acevedo 2020, Jung 2022), amyloid plaques (Tang 2019, Wong 2022), and colorectal histopathology (Kather 2016, 2018).
+            </h2>
+          </div>
+        
         <div class="item">
-          <img src="static/images/Dataset/acevedo.png" alt="Acevedo" loading="lazy" style="width: 80%; height: auto; margin: 0 auto 20px auto; display: block;"/>
+          <img src="static/images/Dataset/acevedo.png" alt="Acevedo" loading="lazy" style="width: 100%; height: auto; margin: 0 auto 20px auto; display: block;"/>
           <h2 class="subtitle has-text-centered">
             Representative sample images from the Acevedo dataset showing white blood cell morphology variations used for in-distribution model training and evaluation.
           </h2>
         </div>
 
         <div class="item">
-          <img src="static/images/Dataset/jung.png" alt="Jung" loading="lazy" style="width: 80%; height: auto; margin: 0 auto 20px auto; display: block;"/>
+          <img src="static/images/Dataset/jung.png" alt="Jung" loading="lazy" style="width: 100%; height: auto; margin: 0 auto 20px auto; display: block;"/>
           <h2 class="subtitle has-text-centered">
             Representative sample images from the Jung dataset showing white blood cell variations and morphological features.
           </h2>
         </div>
 
         <div class="item">
-          <img src="static/images/Dataset/kather2016.png" alt="Kather 2016" loading="lazy" style="width: 80%; height: auto; margin: 0 auto 20px auto; display: block;"/>
+          <img src="static/images/Dataset/kather2016.png" alt="Kather 2016" loading="lazy" style="width: 100%; height: auto; margin: 0 auto 20px auto; display: block;"/>
           <h2 class="subtitle has-text-centered">
             Representative sample images from the Kather 2016 dataset showing colorectal histopathology tissue patterns and classifications.
           </h2>
         </div>
 
         <div class="item">
-          <img src="static/images/Dataset/kather2018.png" alt="Kather 2018" loading="lazy" style="width: 80%; height: auto; margin: 0 auto 20px auto; display: block;"/>
+          <img src="static/images/Dataset/kather2018.png" alt="Kather 2018" loading="lazy" style="width: 100%; height: auto; margin: 0 auto 20px auto; display: block;"/>
           <h2 class="subtitle has-text-centered">
             Representative sample images from the Kather 2018 dataset showing colorectal histopathology tissue types and structures.
           </h2>
         </div>
 
         <div class="item">
-          <img src="static/images/Dataset/tang.png" alt="Tang" loading="lazy" style="width: 80%; height: auto; margin: 0 auto 20px auto; display: block;"/>
+          <img src="static/images/Dataset/tang.png" alt="Tang" loading="lazy" style="width: 100%; height: auto; margin: 0 auto 20px auto; display: block;"/>
           <h2 class="subtitle has-text-centered">
             Representative sample images from the Tang dataset showing amyloid plaque morphology and tissue characteristics.
           </h2>
         </div>
 
         <div class="item">
-          <img src="static/images/Dataset/wong.png" alt="Wong" loading="lazy" style="width: 80%; height: auto; margin: 0 auto 20px auto; display: block;"/>
+          <img src="static/images/Dataset/wong.png" alt="Wong" loading="lazy" style="width: 100%; height: auto; margin: 0 auto 20px auto; display: block;"/>
           <h2 class="subtitle has-text-centered">
             Representative sample images from the Wong dataset showing amyloid plaque variations and pathological features.
           </h2>
@@ -478,75 +479,6 @@
   </div>
 </section>
 <!-- End dataset description -->
-
-
-<!-- Youtube video -->
-<!-- <section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      Paper video.
-      <h2 class="title is-3">Video Presentation</h2>
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          
-          <div class="publication-video">
-            TODO: Replace with your YouTube video ID
-            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section> -->
-<!-- End youtube video -->
-
-
-<!-- Video carousel -->
-<!-- <section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Another Carousel</h2>
-      <div id="results-carousel-video" class="carousel results-carousel">
-        <div class="item item-video1">
-          <video poster="" id="video1" controls muted loop height="100%" preload="metadata">
-            <source src="static/videos/carousel1.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video2">
-          <video poster="" id="video2" controls muted loop height="100%" preload="metadata">
-            <source src="static/videos/carousel2.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video3">
-          <video poster="" id="video3" controls muted loop height="100%" preload="metadata">
-            <source src="static/videos/carousel3.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-</section> -->
-<!-- End video carousel -->
-
-
-
-
-
-
-<!-- Paper poster -->
-<!-- <section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title">Poster</h2>
-
-      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
-          </iframe>
-        
-      </div>
-    </div>
-  </section> -->
-<!--End paper poster -->
-
 
 
 <!--BibTex citation -->
@@ -559,17 +491,29 @@
           <span class="copy-text">Copy</span>
         </button>
       </div>
-      <pre id="bibtex-code"><code>@article{YourPaperKey2024,
-  title={Your Paper Title Here},
-  author={First Author and Second Author and Third Author},
-  journal={Conference/Journal Name},
-  year={2024},
-  url={https://your-domain.com/your-project-page}
+      <pre id="bibtex-code"><code>@misc{meleti2026uncertaintyawareimageclassificationbiomedical,
+      title={Uncertainty-Aware Image Classification In Biomedical Imaging Using Spectral-normalized Neural Gaussian Processes}, 
+      author={Uma Meleti and Jeffrey J. Nirschl},
+      year={2026},
+      eprint={2602.02370},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2602.02370}, 
 }</code></pre>
     </div>
 </section>
 <!--End BibTex citation -->
 
+<!-- Acknowledgements -->
+<section class="section">
+  <div class="container is-max-desktop content">
+    <h2 class="title">Acknowledgements</h2>
+    <p>
+      This work was supported by the University of Wisconsin–Madison ADRC (NIH P30-AG53425), Department of Pathology, and the Madison VA GRECC.
+    </p>
+  </div>
+</section>
+<!-- End Acknowledgements -->
 
   <footer class="footer">
   <div class="container">
