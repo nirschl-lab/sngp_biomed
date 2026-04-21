@@ -212,6 +212,19 @@
           <div class="column has-text-centered">
             <!-- TODO: Replace with your paper title -->
             <h1 class="title is-1 publication-title">Uncertainty-Aware Image Classification in Biomedical Imaging Using SNGP</h1>
+            
+            <!-- Oral Presentation Badge -->
+            <div style="margin: 15px 0; display: flex; justify-content: center; gap: 10px;">
+              <span class="tag is-warning" style="font-size: 1.1em; padding: 8px 16px;">
+                <i class="fas fa-microphone" style="margin-right: 8px;"></i>
+                <strong>Oral Presentation</strong>
+              </span>
+              <span class="tag is-info" style="font-size: 1.1em; padding: 8px 16px;">
+                <i class="fas fa-location-dot" style="margin-right: 8px;"></i>
+                <strong>ISBI 2026 • London</strong>
+              </span>
+            </div>
+            
             <div class="is-size-5 publication-authors">
               <!-- TODO: Replace with your paper authors and their personal links -->
               <span class="author-block">
@@ -222,7 +235,7 @@
 
                   <div class="is-size-5 publication-authors">
                     <!-- TODO: Replace with your institution and conference/journal info -->
-                    <span class="author-block">University Of Wisconsin Madison<br>International Symposium on Biomedical Imaging 2026</span>
+                    <span class="author-block">University Of Wisconsin Madison<br><strong>International Symposium on Biomedical Imaging 2026 • London</strong></span>
                     <!-- TODO: Remove this line if no equal contribution -->
                     <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
                   </div>
@@ -443,14 +456,15 @@
 <!--BibTex citation -->
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
+      <!-- Paper Citation -->
       <div class="bibtex-header">
-        <h2 class="title">BibTeX</h2>
-        <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
+        <h2 class="title">Paper Citation</h2>
+        <button class="copy-bibtex-btn" onclick="copyBibTeX('bibtex-paper')" title="Copy BibTeX to clipboard">
           <i class="fas fa-copy"></i>
           <span class="copy-text">Copy</span>
         </button>
       </div>
-      <pre id="bibtex-code"><code>@misc{meleti2026uncertaintyawareimageclassificationbiomedical,
+      <pre id="bibtex-paper"><code>@misc{meleti2026uncertaintyawareimageclassificationbiomedical,
       title={Uncertainty-Aware Image Classification In Biomedical Imaging Using Spectral-normalized Neural Gaussian Processes}, 
       author={Uma Meleti and Jeffrey J. Nirschl},
       year={2026},
@@ -458,6 +472,23 @@
       archivePrefix={arXiv},
       primaryClass={cs.CV},
       url={https://arxiv.org/abs/2602.02370}, 
+}</code></pre>
+
+      <!-- Model Citation -->
+      <div class="bibtex-header" style="margin-top: 30px;">
+        <h2 class="title">Model Citation</h2>
+        <button class="copy-bibtex-btn" onclick="copyBibTeX('bibtex-model')" title="Copy BibTeX to clipboard">
+          <i class="fas fa-copy"></i>
+          <span class="copy-text">Copy</span>
+        </button>
+      </div>
+      <pre id="bibtex-model"><code>@misc{nirschl_lab_2026,
+      author       = {Nirschl Lab and Uma Meleti and Jeffrey Nirschl},
+      title        = {sngp-models (Revision c24f132)},
+      year         = 2026,
+      url          = {https://huggingface.co/nirschl-lab/sngp-models},
+      doi          = {10.57967/hf/8420},
+      publisher    = {Hugging Face}
 }</code></pre>
     </div>
 </section>

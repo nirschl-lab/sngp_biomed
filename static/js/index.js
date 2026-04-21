@@ -37,16 +37,16 @@ document.addEventListener('keydown', function(event) {
 });
 
 // Copy BibTeX to clipboard
-function copyBibTeX() {
-    const bibtexElement = document.getElementById('bibtex-code');
-    const button = document.querySelector('.copy-bibtex-btn');
+function copyBibTeX(elementId = 'bibtex-paper') {
+    const bibtexElement = document.getElementById(elementId);
+    const button = event.target.closest('.copy-bibtex-btn');
     const copyText = button.querySelector('.copy-text');
     
     if (bibtexElement) {
         navigator.clipboard.writeText(bibtexElement.textContent).then(function() {
             // Success feedback
             button.classList.add('copied');
-            copyText.textContent = 'Cop';
+            copyText.textContent = 'Copied!';
             
             setTimeout(function() {
                 button.classList.remove('copied');
@@ -63,7 +63,7 @@ function copyBibTeX() {
             document.body.removeChild(textArea);
             
             button.classList.add('copied');
-            copyText.textContent = 'Cop';
+            copyText.textContent = 'Copied!';
             setTimeout(function() {
                 button.classList.remove('copied');
                 copyText.textContent = 'Copy';
